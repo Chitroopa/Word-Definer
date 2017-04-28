@@ -6,6 +6,8 @@
       <% @words.definition().each() do |word| %>
         <h4><i><%= word.definition()%></i></h4>
       <% end %>
+    <% else%>
+      <h5><i>There is no definition availabe for this word. Could you please add one?</i></h5>
     <% end %>
    </div>
    <img id="img-edit" src="<%= @words.img_url() %>"/>
@@ -15,5 +17,12 @@
     <label for="meaning">Add another defintion:</label>
     <input id="meaning" name="meaning" type="text" class="form-control">
   </div>
-  <button type="submit" class="btn bg-primary">Add definition</button>
+  <div class="row">
+    <div class="col-md-2">
+      <button type="submit" class="btn bg-primary">Add definition</button>
+    </div>
+    <div class="col-md-2">
+      <a href="/" class="btn btn-success active" role="button" aria-pressed="true">Home</a>
+    </div>
+  </div>
 </form>

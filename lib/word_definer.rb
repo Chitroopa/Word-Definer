@@ -54,8 +54,7 @@ class Word
   end
 
   def self.word_search(search_word)
-    found_word = @@words.select{|word| word.word() == search_word}
+    found_word = @@words.select{|word| word.word().downcase() == search_word.downcase()}
     return found_word
   end
-
 end

@@ -1,0 +1,11 @@
+<% @words.each() do |word| %>
+  <div class="row">
+    <h4><%= word.word() %></h4>
+    <% word.definition().each() do |meaning| %>
+      <ul>
+        <li><i><%= meaning.definition() %></i></li>
+      </ul>
+    <% end %>
+  </div>
+<% end %>
+<a href="/" class="btn btn-success active" role="button" aria-pressed="true">Home</a>

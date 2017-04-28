@@ -42,7 +42,7 @@ describe('Word') do
     it("returns a word by it's id number") do
       test_word = Word.new({:word=> "Sun", :img_url=>"http://www.clipartbest.com/cliparts/nTX/89E/nTX89EpKc.jpg"})
       test_word.save()
-      expect(Word.find(test_word.id())).to eq([test_word])
+      expect(Word.find(test_word.id())).to eq(test_word)
     end
   end
 

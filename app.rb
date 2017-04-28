@@ -35,8 +35,10 @@ post('/words') do
   img_url = params.fetch("img-url")
   new_word = Word.new({:word=> word, :img_url=> img_url})
   meaning = params.fetch("meaning")
-  new_definition = Definition.new(:definition=>meaning)
-  new_word.add_definition(new_definition)
+  if meaning != """"
+    new_definition = Definition.new(:definition=>meaning)
+    new_word.add_definition(new_definition)
+  end
   new_word.save()
   erb(:index)
 end
@@ -49,12 +51,30 @@ end
 post('/word/:id') do
   @words = Word.find(params.fetch("id"))
   meaning = params.fetch("meaning")
-  new_definition = Definition.new(:definition=>meaning)
-  @words.add_definition(new_definition)
+  if meaning != """"
+    new_definition = Definition.new(:definition=>meaning)
+    @words.add_definition(new_definition)
+  end
   erb(:word)
 end
 
 get('/words/alphabetical') do
   @words = Word.sort_words()
   erb(:words_sort)
+end
+
+get('/words-sample') do
+  @words = Word.sample_word()
+  erb(:word)
+end
+
+get('/words/all-words-definition') do
+  @words = Word.all()
+  erb(:all_word_definition)
+end
+
+get ('/word-search') do
+  word = params.fetch('search')
+  @search_word = Word.word_search(word)
+  erb(:wordsearch_result)
 end

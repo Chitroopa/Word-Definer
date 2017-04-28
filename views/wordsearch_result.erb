@@ -1,0 +1,11 @@
+<h1>Search result</h1>
+<ul>
+  <% if @search_word.length() > 0 %>
+    <% @search_word.each() do |word| %>
+      <li><a href="/word/<%= word.id() %>"><h4><%= word.word() %></h4></li>
+    <% end %>
+  <% else %>
+    <h4><i>No search results found</i></h4>
+  <% end %>
+</ul>
+<a href="/" class="btn btn-success active" role="button" aria-pressed="true">Home</a>
