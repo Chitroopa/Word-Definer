@@ -42,7 +42,7 @@ describe('Word') do
     it("returns a word by it's id number") do
       test_word = Word.new({:word=> "Sun", :img_url=>"http://www.clipartbest.com/cliparts/nTX/89E/nTX89EpKc.jpg"})
       test_word.save()
-      expect(Word.find(test_word.id())).to eq(test_word)
+      expect(Word.find(test_word.id())).to eq([test_word])
     end
   end
 
@@ -56,4 +56,29 @@ describe('Word') do
       expect(test_word.definition()).to eq([test_definition])
     end
   end
+
+  describe(".sort_words") do
+    it ("return words sorted alphabetically") do
+      test_word = Word.new({:word=> "Sun", :img_url=>"http://www.clipartbest.com/cliparts/nTX/89E/nTX89EpKc.jpg"})
+      test_word.save()
+      test_word1 = Word.new({:word=> "Ball", :img_url=>"http://www.clipartbest.com/cliparts/nTX/89E/nTX89EpKc.jpg"})
+      test_word1.save()
+      test_word2 = Word.new({:word=> "Apple", :img_url=>"http://www.clipartbest.com/cliparts/nTX/89E/nTX89EpKc.jpg"})
+      test_word2.save()
+      expect(Word.sort_words()).to eq([test_word2, test_word1, test_word])
+    end
+  end
+
+  describe(".word_search") do
+    it ("will search for word and returns it") do
+      test_word = Word.new({:word=> "Sun", :img_url=>"http://www.clipartbest.com/cliparts/nTX/89E/nTX89EpKc.jpg"})
+      test_word.save()
+      test_word1 = Word.new({:word=> "Ball", :img_url=>"http://www.clipartbest.com/cliparts/nTX/89E/nTX89EpKc.jpg"})
+      test_word1.save()
+      test_word2 = Word.new({:word=> "Apple", :img_url=>"http://www.clipartbest.com/cliparts/nTX/89E/nTX89EpKc.jpg"})
+      test_word2.save()
+      expect(Word.word_search(test_word2.word())).to eq([test_word2])
+    end
+  end
+
 end
