@@ -1,0 +1,6 @@
+<h1>Words in alphabetical order</h1>
+<ul>
+  <% @words.each() do |word| %>
+    <li><a href="/word/<%= word.id() %>"><%= word.word() %></li>
+  <% end %>
+</ul>

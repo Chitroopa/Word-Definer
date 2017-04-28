@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="jumbotron">
+    <h4><%= @words.word() %></h4>
+
+    <% if @words.definition().length() > 0  %>
+      <% @words.definition().each() do |word| %>
+        <h4><i><%= word.definition()%></i></h4>
+      <% end %>
+    <% end %>
+   </div>
+   <img id="img-edit" src="<%= @words.img_url() %>"/>
+</div>
+<form action="/word/<%= @words.id()%>" method="post">
+  <div class="form-group">
+    <label for="meaning">Add another defintion:</label>
+    <input id="meaning" name="meaning" type="text" class="form-control">
+  </div>
+  <button type="submit" class="btn bg-primary">Add definition</button>
+</form>

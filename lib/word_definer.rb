@@ -18,6 +18,10 @@ class Word
     @id = @@words.length() + 1
   end
 
+  def add_definition(definition)
+    @definition.push(definition)
+  end
+
   def save
     @@words.push(self)
   end
@@ -31,18 +35,13 @@ class Word
   end
 
   def self.find(id)
-    # found_word = nil
-    found_word = @@words.select{|word| word.id() == id.to_i}
-    # @@words.each() do |word|
-    #   if word.id() == id.to_i
-    #     found_word = word
-    #   end
-    # end
+    found_word = nil
+    @@words.each() do |word|
+      if word.id() == id.to_i
+        found_word = word
+      end
+    end
     found_word
-  end
-
-  def add_definition(definition)
-    @definition.push(definition)
   end
 
   def self.sort_words
@@ -58,6 +57,5 @@ class Word
     found_word = @@words.select{|word| word.word() == search_word}
     return found_word
   end
-
 
 end
