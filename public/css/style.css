@@ -1,15 +1,32 @@
 body {
+  background-color: #82CACD;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.jumbotron {
+  background-color: inherit;
+  text-align: center;
+  font-family: "Comic Sans MS";
+  color: #3399FF;
+}
+
+.body-style {
   background-color: lightblue;
   font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
-#img-style {
-  height: 20%;
+.heading-style {
+  color: 	#C02F1D;
 }
 
-.jumbotron {
-  background-color: lightblue;
-  text-align: center;
-  font-family: "Comic Sans MS";
-  color: #3399FF;
+.text-style {
+  color: #2E8B57;
+}
+
+.text-style1 {
+  color: #107896;
+}
+
+.text-style2 {
+  color: 	green;
 }

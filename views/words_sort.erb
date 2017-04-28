@@ -1,7 +1,7 @@
 <h1>Words in alphabetical order</h1>
 <ul>
   <% @words.each() do |word| %>
-    <li><a href="/word/<%= word.id() %>"><%= word.word() %></li>
+    <h4><li><a href="/word/<%= word.id() %>"><%= word.word() %></li></h4>
   <% end %>
 </ul>
 <a href="/" class="btn btn-success active" role="button" aria-pressed="true">Home</a>

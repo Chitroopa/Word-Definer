@@ -1,9 +1,9 @@
 <% @words.each() do |word| %>
   <div class="row">
-    <h4><%= word.word() %></h4>
+    <h2 class="heading-style" ><%= word.word() %></h2>
     <% word.definition().each() do |meaning| %>
       <ul>
-        <li><i><%= meaning.definition() %></i></li>
+        <h4><li class="text-style1"><i><%= meaning.definition() %></i></li></h4>
       </ul>
     <% end %>
   </div>

@@ -5,7 +5,7 @@
       <div class="input-group">
         <input type="text" class="form-control" placeholder="Search for..." name="search">
         <span class="input-group-btn">
-          <button class="btn btn-default" type="submit">Go!</button>
+          <button class="btn btn-success" type="submit">Go!</button>
         </span>
       </div>
     </form>
@@ -13,30 +13,30 @@
 </div>
 <div class="row">
   <div class="col-md-6">
-    <h3>Click on word to know its defintion:</h3>
+    <h3 class="text-style1">Click on word to know its defintion:</h3>
     <ul>
       <% @words.each() do |word| %>
-        <li><a href="/word/<%= word.id() %>"><%= word.word() %></li>
+        <h4><li><a href="/word/<%= word.id() %>"><span class="text-style2"> <%= word.word() %></span></li></h4>
       <% end %>
     </ul>
 
     <form action="/word/new">
-    <button type="submit" class="btn btn-info">Add word</button>
+    <button type="submit" class="btn btn-warning">Add word</button>
     </form>
   </div>
   <div class="col-md-6">
     <form action="/words/alphabetical">
-      <button type="submit" class="btn btn-primary btn-lg">Sort words (A-Z)</button>
+      <button type="submit" class="btn btn-warning btn-lg">Sort words (A-Z)</button>
     </form><br>
     <form action="/words-sample">
       <button type="submit" class="btn btn-success btn-lg">See sample word</button>
     </form><br>
     <form action="/words/all-words-definition">
-      <button type="submit" class="btn btn-warning btn-lg">See all words with definition</button>
+      <button type="submit" class="btn btn-primary btn-lg">See all words with definition</button>
     </form>
   </div>
 </div>
 <br><br>
 <div class="row">
-  <img id="img-style" src="img/img3.jpg"/>
+  <img src="img/img3.jpg"/>
 </div>

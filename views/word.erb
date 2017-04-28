@@ -1,20 +1,17 @@
 <div class="row">
-  <div class="jumbotron">
-    <h4><%= @words.word() %></h4>
-
-    <% if @words.definition().length() > 0  %>
-      <% @words.definition().each() do |word| %>
-        <h4><i><%= word.definition()%></i></h4>
-      <% end %>
-    <% else%>
-      <h5><i>There is no definition availabe for this word. Could you please add one?</i></h5>
+  <h2 class="heading-style"><%= @words.word() %></h2>
+  <% if @words.definition().length() > 0  %>
+    <% @words.definition().each() do |word| %>
+      <h4 class="text-style"><i><%= word.definition()%></i></h4>
     <% end %>
-   </div>
-   <img id="img-edit" src="<%= @words.img_url() %>"/>
+  <% else%>
+    <h5><i>There is no definition availabe for this word. Could you please add one?</i></h5>
+  <% end %>
+  <br><img id="img-style" src="<%= @words.img_url() %>"/><br><br>
 </div>
 <form action="/word/<%= @words.id()%>" method="post">
   <div class="form-group">
-    <label for="meaning">Add another defintion:</label>
+    <h4><label for="meaning">Add another defintion:</label></h4>
     <input id="meaning" name="meaning" type="text" class="form-control">
   </div>
   <div class="row">
