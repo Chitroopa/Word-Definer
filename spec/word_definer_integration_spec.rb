@@ -3,14 +3,15 @@ require('./app')
 Capybara.app = Sinatra::Application
 set(:show_exceptions, false)
 
-describe('contact',{:type => :feature}) do
-  it('on click of list of words display definition page') do
+describe('word definer',{:type => :feature}) do
+
+  it('on click of list of words, display definition page') do
     visit('/')
     click_on('Apple')
     expect(page).to have_content('Apple')
   end
 
-  it('on click Add word button show word addition page') do
+  it('on click "Add word" button show word addition page') do
     visit('/')
     click_button('Add word')
     expect(page).to have_content('Add word and its defintion:')

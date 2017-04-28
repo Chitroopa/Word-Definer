@@ -1,4 +1,3 @@
-require('pry')
 class Definition
   attr_reader(:definition)
   def initialize(attributes)
@@ -41,7 +40,7 @@ class Word
         found_word = word
       end
     end
-    found_word
+    return found_word
   end
 
   def self.sort_words
