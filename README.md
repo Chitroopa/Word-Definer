@@ -12,7 +12,7 @@ _This application contains two classes: One for Word, and one for Definition. Th
 
 ## Setup/Installation Requirements
 
-* _This project is deployed in Heroku  or follow the below steps_
+* _This project is deployed in Heroku https://word-definer-for-kids.herokuapp.com/ or follow the below steps_
 * _Clone this repository_
 * _Give $ bundle command to install all required gems_
 * _This application uses Sinatra server, give $ ruby app.rb to start the server_
